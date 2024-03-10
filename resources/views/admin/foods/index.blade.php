@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="mt-5 d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
         <div>
             {{-- Delete and Restore Message Success --}}
             @if (session('message'))
