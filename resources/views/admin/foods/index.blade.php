@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="d-flex justify-content-between py-2 px-4 align-items-center rounded ms_bg-horizontal text-white">
+    <div class="d-flex justify-content-between py-2 px-4 align-items-center rounded bg-white border">
         <h2 class="mb-0">I tuoi piatti: {{ count(Auth::user()->restaurant->foods) }}</h2>
 
         <div class="d-flex gap-3 align-items-center">

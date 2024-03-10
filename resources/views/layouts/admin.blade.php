@@ -28,16 +28,9 @@
     <div id="app">
 
         <header class="navbar sticky-top flex-md-nowrap py-1 shadow px-5 ms_bg-yellow align-items-center">
-            <div class="row justify-content-between align-items-center flex-nowrap">
-                <a class="navbar-brand  me-0 px-3" href="http://localhost:4242/">
-                    <img class="w-50" src="{{ Vite::asset('resources\img\logotipo.png') }}" alt="Logo Devvery">
-                </a>
-                <button class="ms_hamburger navbar-toggler position-relative d-md-none collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="{{ Vite::asset('resources\img\hamburger.png') }}" alt="Logo Devvery">
-                </button>
-            </div>
+            <a class="navbar-brand me-0 px-3" href="http://localhost:4242/">
+                <img class="w-25" src="{{ Vite::asset('resources\img\logotipo.png') }}" alt="Logo Devvery">
+            </a>
 
             <div class="navbar-nav d-md-flex flex-row align-items-center d-none">
                 <div class="dropdown me-2">
@@ -58,64 +51,57 @@
                     </ul>
                 </div>
             </div>
-
         </header>
 
-        <div class="container-fluid">
-            <div class="row">
-
-                <nav id="sidebarMenu"
-                    class="shadow shadow-4 col-md-1 d-md-block navbar-dark sidebar py-2 ms_bg-vertical collapse">
-                    <div class="position-sticky py-3 py-md-5 text-center">
-                        <ul class="nav flex-row flex-md-column gap-md-5 flex-nowrap justify-content-evenly">
-
-                            <li class="nav-item">
-                                <a class=" {{ Route::currentRouteName() == 'admin.dashboard' ? 'ms_color-yellow' : 'text-white' }}"
-                                    href="{{ route('admin.dashboard') }}">
-                                    <i class="fa-solid fa-house"></i>
+        <div class="w-100">
+            <div class="d-flex flex-column flex-md-row">
+                <nav id="sidebarMenu" class="shadow shadow-4 p-4">
+                    <ul class="m-0 p-0 d-flex flex-row flex-md-column gap-4 justify-content-around">
+                        <li class="list-group-item">
+                            <a class=" {{ Route::currentRouteName() == 'admin.dashboard' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                                href="{{ route('admin.dashboard') }}">
+                                <i class="fa-solid fa-house"></i>
+                            </a>
+                        </li>
+                        @if (Auth::user()->restaurant)
+                            <li class="list-group-item">
+                                <a class="{{ Route::currentRouteName() == 'admin.foods.index' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                                    href="{{ route('admin.foods.index') }}">
+                                    <i class="fa-solid fa-utensils"></i>
                                 </a>
                             </li>
-                            @if (Auth::user()->restaurant)
-                                <li class="nav-item">
-                                    <a class="{{ Route::currentRouteName() == 'admin.foods.index' ? 'ms_color-yellow' : 'text-white' }}"
-                                        href="{{ route('admin.foods.index') }}">
-                                        <i class="fa-solid fa-utensils"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="{{ Route::currentRouteName() == 'admin.orders.index' ? 'ms_color-yellow' : 'text-white' }}"
-                                        href="{{ route('admin.orders.index') }}">
-                                        <i class="fa-solid fa-cash-register"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="{{ Route::currentRouteName() == 'admin.stats' ? 'ms_color-yellow' : 'text-white' }}"
-                                        href="{{ route('admin.stats') }}">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                    </a>
-                                </li>
-                            @endif
+                            <li class="list-group-item">
+                                <a class="{{ Route::currentRouteName() == 'admin.orders.index' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                                    href="{{ route('admin.orders.index') }}">
+                                    <i class="fa-solid fa-cash-register"></i>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="{{ Route::currentRouteName() == 'admin.stats' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                                    href="{{ route('admin.stats') }}">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </a>
+                            </li>
+                        @endif
 
-                            <li class="d-block d-md-none">
-                                <a class="nav-item px-2 ms_color-red" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                        <li class="d-block d-md-none">
+                            <a class="nav-item px-2 ms_color-red" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
                 </nav>
 
-                <main class="col-md-11">
+                <main class="w-100">
                     @yield('content')
                 </main>
             </div>
         </div>
-
     </div>
 
     {{-- Pages scripts --}}

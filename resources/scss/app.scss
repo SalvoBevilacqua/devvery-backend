@@ -108,18 +108,6 @@ img {
   font-weight: bold;
 }
 
-.ms_bg-vertical {
-  background: rgb(3, 28, 32);
-  background: linear-gradient(283deg, rgba(4, 54, 63, 1) 54%, rgba(3, 28, 32, 1) 54%);
-}
-
-.ms_bg-horizontal {
-  background: rgb(3, 28, 32);
-  background: linear-gradient(186deg, rgba(4, 54, 63, 1) 54%, rgba(3, 28, 32, 1) 54%);
-}
-
-
-
 // CUSTOM
 .not-found-page {
   height: calc(100vh - 200px);
@@ -157,12 +145,6 @@ main {
     background-color: $ms_dark;
     color: white;
   }
-
-  li:hover {
-    a {
-      background-color: rgba(103, 100, 100, 0.485);
-    }
-  }
 }
 
 .navbar-toggler {
@@ -190,33 +172,8 @@ nav {
   }
 }
 
-.card-body {
-  background-color: rgba(253, 182, 51, 0.10);
-}
-
-.card-header {
-  background-color: rgba(253, 182, 51, 0.25);
-}
-
-.modal-header {
-  background-color: rgba(253, 182, 51, 0.25);
-}
-
-.modal-body {
-  background-color: rgba(253, 182, 51, 0.10);
-}
-
-.modal-footer {
-  background-color: rgba(253, 182, 51, 0.10);
-}
-
-td {
-  background-color: #fff8ec !important;
-}
-
-tr,
-th {
-  background-color: #ffecd0 !important;
+.card {
+  border-color: $ms_dark;
 }
 
 label {

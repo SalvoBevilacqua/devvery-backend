@@ -15,40 +15,40 @@ class TypesTableSeeder extends Seeder
     {
         $types = [
             [
-            'name' => 'Pasticceria',
-            'description' => 'Goditi la nostra vasta scelta di buonissimi dolci'
+                'name' => 'Pasticceria',
+                'description' => 'Goditi la nostra vasta scelta di buonissimi dolci'
             ],
             [
-            'name' => 'Hamburgher',
-            'description' => 'I veri hamburgher come non li hai mai assaggiati'
+                'name' => 'Hamburger',
+                'description' => 'I veri hamburger come non li hai mai assaggiati'
             ],
             [
-            'name' => 'Gourmet',
-            'description' => 'Lasciati coccolare dai nostri Chef e riscopri nuovi sapori mai provati'
+                'name' => 'Gourmet',
+                'description' => 'Lasciati coccolare dai nostri Chef e riscopri nuovi sapori mai provati'
             ],
             [
-            'name' => 'Giappo',
-            'description' => 'Il miglior Sushi di Milano a portata di click'
+                'name' => 'Giapponese',
+                'description' => 'Il miglior Sushi di Milano a portata di click'
             ],
             [
-            'name' => 'Cinese',
-            'description' => 'Tante nuove emozioni culinarie, in questo viaggio nel lontano oriente'
+                'name' => 'Cinese',
+                'description' => 'Tante nuove emozioni culinarie, in questo viaggio nel lontano oriente'
             ],
             [
-            'name' => 'Trattoria',
-            'description' => 'Ritrova i sapori della tipica cucina Italiana in questo salto nel passato'
+                'name' => 'Trattoria',
+                'description' => 'Ritrova i sapori della tipica cucina Italiana in questo salto nel passato'
             ],
             [
-            'name' => 'Pizzeria',
-            'description' => 'Il piatto Italiano per eccellenza ! Da noi trovi solo le migliori pizzerie della zona selezionate per te'
+                'name' => 'Pizzeria',
+                'description' => 'Il piatto Italiano per eccellenza ! Da noi trovi solo le migliori pizzerie della zona selezionate per te'
             ],
             [
-            'name' => 'FastFood',
-            'description' => 'Vuoi goderti un piatto veloce e buonissimo ? Questa è la sezione adatta a te !'
+                'name' => 'FastFood',
+                'description' => 'Vuoi goderti un piatto veloce e buonissimo ? Questa è la sezione adatta a te !'
             ],
         ];
 
-        foreach($types as $type) {
+        foreach ($types as $type) {
             $new_type = new Type();
             $new_type->name = $type['name'];
             $new_type->description = $type['description'];

@@ -9,7 +9,7 @@
     <div class="container-fluid">
 
         <div
-            class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded ms_bg-horizontal text-white flex-wrap">
+            class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded flex-wrap bg-white border">
             <h2>Ciao {{ $user->name }}</h2>
             @if ($user->userDetail)
                 <p class="mt-3"><strong>Partita IVA:</strong><br> {{ $user->userDetail->vat_number }}

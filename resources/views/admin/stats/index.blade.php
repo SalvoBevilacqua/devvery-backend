@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-    <div
-        class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded ms_bg-horizontal text-white">
+    <div class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded bg-white border">
         <h2>Statistiche</h2>
         <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-yellow float-center">INDIETRO</a>
     </div>
@@ -15,7 +14,7 @@
         <div class="container-fluid">
             <div class="card mb-4">
                 <h2 class="text-center card-header">I tuoi Piatti forti</h2>
-                <div class="d-flex fw-bold py-3 justify-content-around px-4 ms_background">
+                <div class="d-flex fw-bold py-3 justify-content-around px-4">
                     <div>
                         <div class="d-flex align-items-start align-items-center gap-3">
                             <img class="ms_img_width" src="{{ Vite::asset('resources\img\coccarda_1.png') }}"
