@@ -39,7 +39,6 @@ img {
   color: $ms_red;
 }
 
-
 .ms_btn-red {
   background-color: $ms_red;
   color: white;
@@ -51,6 +50,21 @@ img {
   &:hover {
     border: 2px solid $ms_red;
     color: $ms_red;
+    background-color: transparent;
+  }
+}
+
+.ms_btn-white {
+  background-color: $ms_yellow;
+  color: $ms_dark;
+  padding: .2rem .5rem .2rem .5rem;
+  font-weight: bolder;
+  border-radius: 5px;
+  border: 2px solid $ms_yellow;
+
+  &:hover {
+    border: 2px solid white;
+    color: white;
     background-color: transparent;
   }
 }
@@ -109,31 +123,22 @@ img {
 }
 
 // CUSTOM
-.not-found-page {
-  height: calc(100vh - 200px);
-
-  main {
-    width: 100%;
-    padding: 0 !important;
-  }
-}
-
-body {
-  height: 100vh;
-  overflow: hidden;
-}
-
-main {
-  height: calc(100vh - 50px);
-  overflow: auto;
+#app {
+  min-height: 100vh;
   background-image: url(../img/background.png);
   background-repeat: repeat;
   background-size: 1080px 981px;
-  padding: 2.5rem 2rem 6rem 2rem !important;
+}
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+.wrapper {
+  padding-top: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+  max-height: 1920px;
+}
+
+.ms_header-logo {
+  height: 2rem;
 }
 
 .user_dropdown {
@@ -150,7 +155,6 @@ main {
 .navbar-toggler {
   --bs-navbar-toggler-border-color: none;
   color: transparent;
-
 }
 
 .ms_hamburger {
@@ -208,7 +212,6 @@ th.d-none {
 
 
 // CHECKBOX RESTAURANT
-
 .checkbox-wrapper-10 .tgl {
   display: none;
 }
@@ -310,10 +313,7 @@ th.d-none {
   transform: rotateY(20deg);
 }
 
-
-
 // AVAIABLE TOGGLE
-
 .toggler-wrapper {
   display: block;
   width: 45px;

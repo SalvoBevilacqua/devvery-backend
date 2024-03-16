@@ -6,11 +6,9 @@
 
 @section('content')
 
-    <div class="container-fluid">
-
+    <div class="container">
         <div
-            class="d-flex justify-content-between align-items-center px-4 align-items-center rounded flex-wrap bg-white border">
-            <h2>Ciao {{ $user->name }}</h2>
+            class="d-flex justify-content-between align-items-center px-4 align-items-center rounded rounded-4 flex-wrap bg-white border">
             @if ($user->userDetail)
                 <p class="mt-3"><strong>Partita IVA:</strong><br> {{ $user->userDetail->vat_number }}
                 </p>
@@ -61,7 +59,7 @@
 
             <div class="col-md-8">
                 @if ($restaurant)
-                    <div class="card shadow align-self-streach mt-5 mt-md-0">
+                    <div class="card shadow align-self-streach mt-5 mt-md-0 border">
                         <div class="card-header">
                             <h4>{{ $restaurant->name }}</h4>
                         </div>

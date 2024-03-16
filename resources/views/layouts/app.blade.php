@@ -8,7 +8,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -21,18 +21,16 @@
 
 <body>
     <div id="app">
+        <div class="wrapper">
+            <nav class="navbar rounded-5 ms_bg-yellow px-4">
 
-        <nav class="navbar navbar-expand navbar-light ms_bg-yellow shadow-sm">
-            <div class="container">
-                <a class="navbar-brand d-none d-sm-flex align-items-center w-25" href="http://localhost:4242/">
-                    <img class="w-50" src="{{ Vite::asset('resources\img\logotipo.png') }}" alt="Logo Devvery">
-                </a>
-                <a class="navbar-brand d-sm-none d-flex align-items-center w-25" href="http://localhost:4242/">
-                    <img class="w-50" src="{{ Vite::asset('resources\img\pittogramma.png') }}" alt="Logo Devvery">
+                <a class="py-1" href="http://localhost:4242/">
+                    <img class="ms_header-logo" src="{{ Vite::asset('resources\img\logotipo.png') }}"
+                        alt="Logo Devvery">
                 </a>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto d-flex flex-row gap-4">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
@@ -44,12 +42,12 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="btn btn-secondary dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <li class="nav-item dropdown position-relative">
+                            <a id="navbarDropdown" class="btn dropdown-toggle fw-bold ms_btn-white" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-dark"
+                            <div class="dropdown-menu dropdown-menu-right position-absolute"
                                 aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -65,10 +63,10 @@
                     @endguest
                 </ul>
 
-            </div>
-        </nav>
+            </nav>
+        </div>
 
-        <main class="">
+        <main>
             @yield('content')
         </main>
     </div>

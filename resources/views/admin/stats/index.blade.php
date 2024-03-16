@@ -5,13 +5,14 @@
 @endsection
 
 @section('content')
-    <div class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded bg-white border">
-        <h2>Statistiche</h2>
-        <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-yellow float-center">INDIETRO</a>
-    </div>
+    <div class="container">
+        <div
+            class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded bg-white border">
+            <h2>Statistiche</h2>
+            <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-yellow float-center">INDIETRO</a>
+        </div>
 
-    @if (count($orders) > 20)
-        <div class="container-fluid">
+        @if (count($orders) > 20)
             <div class="card mb-4">
                 <h2 class="text-center card-header">I tuoi Piatti forti</h2>
                 <div class="d-flex fw-bold py-3 justify-content-around px-4">
@@ -75,12 +76,12 @@
 
             </div>
 
-        </div>
-    @else
-        <div class="row d-flex justify-content-center ">
-            <h1 class="text-center ms_bg-yellow p-3 col-md-6">Le statistiche si visualizzano dopo un minimo di 20 ordini
-                ricevuti</h1>
-        </div>
+    </div>
+@else
+    <div class="row d-flex justify-content-center ">
+        <h1 class="text-center ms_bg-yellow p-3 col-md-6">Le statistiche si visualizzano dopo un minimo di 20 ordini
+            ricevuti</h1>
+    </div>
     @endif
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

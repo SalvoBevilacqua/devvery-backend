@@ -26,58 +26,36 @@
 
 <body>
     <div id="app">
+        <div class="wrapper mb-4">
+            <header class="navbar rounded-5 ms_bg-yellow px-4">
+                <a class="py-1" href="http://localhost:4242/">
+                    <img class="ms_header-logo" src="{{ Vite::asset('resources\img\logotipo.png') }}"
+                        alt="Logo Devvery">
+                </a>
 
-        <header class="navbar sticky-top flex-md-nowrap py-1 shadow px-5 ms_bg-yellow align-items-center">
-            <a class="navbar-brand me-0 px-3" href="http://localhost:4242/">
-                <img class="w-25" src="{{ Vite::asset('resources\img\logotipo.png') }}" alt="Logo Devvery">
-            </a>
-
-            <div class="navbar-nav d-md-flex flex-row align-items-center d-none">
-                <div class="dropdown me-2">
-                    <button class="btn ms_btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ Auth::user()->name }}
-                    </button>
-
-                    <ul class="dropdown-menu dropdown-menu-dark position-absolute">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </ul>
-                </div>
-            </div>
-        </header>
-
-        <div class="w-100">
-            <div class="d-flex flex-column flex-md-row">
-                <nav id="sidebarMenu" class="shadow shadow-4 p-4">
-                    <ul class="m-0 p-0 d-flex flex-row flex-md-column gap-4 justify-content-around">
+                <div class="ms_header-link d-flex gap-4 align-items-center">
+                    <ul class="m-0 p-0 d-flex gap-4">
                         <li class="list-group-item">
-                            <a class=" {{ Route::currentRouteName() == 'admin.dashboard' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                            <a class=" {{ Route::currentRouteName() == 'admin.dashboard' ? 'text-white' : 'ms_color-dark' }}"
                                 href="{{ route('admin.dashboard') }}">
                                 <i class="fa-solid fa-house"></i>
                             </a>
                         </li>
                         @if (Auth::user()->restaurant)
                             <li class="list-group-item">
-                                <a class="{{ Route::currentRouteName() == 'admin.foods.index' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                                <a class="{{ Route::currentRouteName() == 'admin.foods.index' ? 'text-white' : 'ms_color-dark' }}"
                                     href="{{ route('admin.foods.index') }}">
                                     <i class="fa-solid fa-utensils"></i>
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a class="{{ Route::currentRouteName() == 'admin.orders.index' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                                <a class="{{ Route::currentRouteName() == 'admin.orders.index' ? 'text-white' : 'ms_color-dark' }}"
                                     href="{{ route('admin.orders.index') }}">
                                     <i class="fa-solid fa-cash-register"></i>
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a class="{{ Route::currentRouteName() == 'admin.stats' ? 'ms_color-yellow' : 'ms_color-dark' }}"
+                                <a class="{{ Route::currentRouteName() == 'admin.stats' ? 'text-white' : 'ms_color-dark' }}"
                                     href="{{ route('admin.stats') }}">
                                     <i class="fa-solid fa-chart-line"></i>
                                 </a>
@@ -95,13 +73,34 @@
                             </form>
                         </li>
                     </ul>
-                </nav>
 
-                <main class="w-100">
-                    @yield('content')
-                </main>
-            </div>
+                    <div class="navbar-nav d-md-flex flex-row align-items-center d-none">
+                        <div class="dropdown me-2">
+                            <button class="btn ms_btn-white dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </button>
+
+                            <ul class="dropdown-menu position-absolute">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
         </div>
+
+        <main>
+            @yield('content')
+        </main>
     </div>
 
     {{-- Pages scripts --}}
