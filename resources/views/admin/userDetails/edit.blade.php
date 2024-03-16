@@ -5,20 +5,22 @@
 @endsection
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container">
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center pb-4">
             <div class="col-md-10">
                 {{-- Back Button --}}
-                <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-dark mb-4">Indietro</a>
-                <div class="card">
+                <a href="{{ route('admin.dashboard') }}" class="ms_btn ms_btn-dark">Indietro</a>
+
+                <div class="card border mt-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h2>Modifica i tuoi dati</h2>
+                        <h3>Modifica i tuoi dati</h3>
 
                     </div>
                     <div class="card-body p-4">
                         <small class="text-danger">Tutti i campi sono obbligatori</small>
-                        <form class="mt-3" action="{{ route('admin.userDetails.update', ['userDetail' => $userDetail->id]) }}"
+                        <form class="mt-3"
+                            action="{{ route('admin.userDetails.update', ['userDetail' => $userDetail->id]) }}"
                             method="POST" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
@@ -51,7 +53,7 @@
                                     value="{{ old('address', $userDetail->address) }}" required>
                             </div>
 
-                            <button class="btn ms_btn-yellow mt-3" type="submit">Salva</button>
+                            <button class="ms_btn ms_btn-yellow mt-3" type="submit">Salva</button>
 
                         </form>
                     </div>

@@ -5,15 +5,15 @@
 @endsection
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container">
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center pb-4">
             <div class="col-md-10">
                 {{-- Back Button --}}
-                <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-dark mb-4">Indietro</a>
-                <div class="card">
+                <a href="{{ route('admin.dashboard') }}" class="ms_btn ms_btn-dark">Indietro</a>
+                <div class="card border mt-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h2>Modifica Il Tuo Ristorante</h2>
+                        <h3>Modifica il tuo Ristorante</h3>
 
                     </div>
                     <div class="card-body p-4">
@@ -102,7 +102,7 @@
                                     alt="" style="max-width: 250px">
                             </div>
 
-                            <button class="btn ms_btn-yellow" type="submit">Salva</button>
+                            <button class="ms_btn ms_btn-yellow" type="submit">Salva</button>
                         </form>
 
                     </div>

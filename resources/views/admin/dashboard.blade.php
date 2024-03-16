@@ -66,7 +66,7 @@
                         </div>
                         <div class="card-body">
                             @if ($restaurant->cover_image)
-                                <img class="w-50 my-3" src="{{ asset('storage/' . $restaurant->cover_image) }}"
+                                <img class="w-50 my-3 rounded" src="{{ asset('storage/' . $restaurant->cover_image) }}"
                                     alt="immagine del ristorante">
                             @else
                                 <img src="{{ Vite::asset('resources\img\noimg.png') }}" class="w-50 my-3"

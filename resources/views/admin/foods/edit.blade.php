@@ -5,14 +5,26 @@
 @endsection
 
 @section('content')
-    <div class="container mt-3">
+    <div class="container pb-4">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <a href="{{ route('admin.foods.index') }}" class="btn ms_btn-dark mb-4">MENU</a>
-                <div class="card">
-                    <div class="card-header">
+                <a href="{{ route('admin.foods.index') }}" class="ms_btn ms_btn-dark">Indietro</a>
 
-                        <h2 class="mb-0">Modifica il Piatto:</h2>
+                <div class="card mt-4 border">
+                    <div class="card-header d-flex justify-content-between">
+                        <h3 class="mb-0">Modifica il Piatto</h3>
+
+                        <div class="d-flex align-items-center gap-2 justify-content-center">
+                            <strong>Disponibile</strong>
+                            <div>
+                                <label class="toggler-wrapper style-1">
+                                    <input type="checkbox" name="available" value="1" @checked($food->available === 1)>
+                                    <div class="toggler-slider">
+                                        <div class="toggler-knob"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body p-4">
                         <small class="text-danger">I campi contrassegnati con un asterisco (*) sono obbligatori.</small>
@@ -107,25 +119,7 @@
                                     style="max-width: 250px">
                             </div>
 
-                            <div class="d-flex justify-content-between">
-
-                                <button class="btn ms_btn-yellow mt-3" type="submit">Salva</button>
-
-                                <div class="d-flex align-items-center gap-2 mt-2 justify-content-center">
-                                    <strong>Disponibile</strong>
-                                    <div>
-                                        <label class="toggler-wrapper style-1">
-                                            <input type="checkbox" name="available" value="1"
-                                                @checked($food->available === 1)>
-                                            <div class="toggler-slider">
-                                                <div class="toggler-knob"></div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            <button class="ms_btn ms_btn-yellow" type="submit">Salva</button>
                         </form>
                     </div>
                 </div>
