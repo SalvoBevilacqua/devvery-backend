@@ -7,16 +7,16 @@
 @section('content')
     <div class="container">
         <div
-            class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded bg-white border">
-            <h2>I tuoi Ordini: {{ count($total_orders) }}</h2>
+            class="ms_int d-flex justify-content-between py-2 px-4 align-items-center rounded rounded-4 bg-white border mb-4">
+            <h3 class="mb-0">Ordini in arrivo: {{ count($total_orders) }}</h3>
             <div>
-                <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-yellow float-center">INDIETRO</a>
-                <a class="btn ms_btn-yellow mt-3 mt-sm-0" href="{{ route('admin.orders.complete') }}"><i
+                <a href="{{ route('admin.dashboard') }}" class="ms_btn ms_btn-yellow float-center">Indietro</a>
+                <a class="ms_btn ms_btn-yellow mt-3 mt-sm-0" href="{{ route('admin.orders.complete') }}"><i
                         class="fa-solid fa-check-to-slot"></i></i></a>
             </div>
         </div>
 
-        <table class="table table-hover mb-5">
+        <table class="table table-hover border">
             <thead>
                 <tr class="text-center">
                     <th scope="col">N.Ordine</th>
@@ -38,12 +38,12 @@
                         <td>
                             <div class="d-flex gap-2 justify-content-center">
                                 <a href="{{ route('admin.orders.show', ['order' => $order->id]) }}"
-                                    class="btn ms_btn-yellow"><i class="fa-regular fa-eye"></i></a>
+                                    class="ms_btn ms_btn-yellow"><i class="fa-regular fa-eye"></i></a>
                                 <form action="{{ route('admin.order.check', ['order' => $order->id]) }}" method="POST">
                                     @csrf
                                     @method('POST')
                                     <button @disabled($order->status === 1) type="submit"
-                                        class="{{ $order->status === 0 ? 'ms_btn-red' : 'ms_btn-green' }}"><i
+                                        class="{{ $order->status === 0 ? 'ms_btn ms_btn-red' : 'ms_btn ms_btn-green' }}"><i
                                             class="fa-solid fa-circle-check"></i></button>
                                 </form>
                             </div>

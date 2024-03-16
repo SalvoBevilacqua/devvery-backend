@@ -6,13 +6,13 @@
 
 @section('content')
     <div class="container">
-        <div class="d-flex justify-content-between py-2 px-4 align-items-center rounded bg-white border">
+        <div class="ms_int d-flex justify-content-between py-2 px-4 align-items-center rounded rounded-4 bg-white border">
             <h3 class="mb-0">I tuoi piatti: {{ count(Auth::user()->restaurant->foods) }}</h3>
 
             <div class="d-flex gap-3 align-items-center">
-                <a href="{{ route('admin.foods.create') }}" class="btn ms_btn-yellow"><i
+                <a href="{{ route('admin.foods.create') }}" class="ms_btn ms_btn-yellow"><i
                         class="fa-regular fa-square-plus"></i></a>
-                <a class="btn ms_btn-yellow" href="{{ route('admin.foods.trash') }}"><i class="fa-solid fa-trash"></i></a>
+                <a class="ms_btn ms_btn-yellow" href="{{ route('admin.foods.trash') }}"><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
 
             @foreach ($foods as $food)
                 <div class="col g-4">
-                    <div class="card shadow hover-zoom border h-100">
+                    <div class="card hover-zoom border h-100">
                         <div class="card-body">
                             <div class="mb-2 d-flex justify-content-end">
                                 @if ($food->available === 1)

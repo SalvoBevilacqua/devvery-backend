@@ -7,43 +7,40 @@
 @section('content')
     <div class="container">
         <div
-            class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded bg-white border">
-            <h2>Statistiche</h2>
-            <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-yellow float-center">INDIETRO</a>
+            class="ms_int d-flex justify-content-between py-2 px-4 align-items-center rounded rounded-4 bg-white border mb-4">
+            <h3 class="mb-0">Statistiche</h3>
+            <a href="{{ route('admin.dashboard') }}" class="ms_btn ms_btn-yellow float-center">Indietro</a>
         </div>
 
         @if (count($orders) > 20)
-            <div class="card mb-4">
-                <h2 class="text-center card-header">I tuoi Piatti forti</h2>
-                <div class="d-flex fw-bold py-3 justify-content-around px-4">
-                    <div>
-                        <div class="d-flex align-items-start align-items-center gap-3">
-                            <img class="ms_img_width" src="{{ Vite::asset('resources\img\coccarda_1.png') }}"
-                                alt="primo_posto">
-                            <p id="gold" class="m-0 p-0"></p>
-                        </div>
+            {{-- PODIO --}}
+            <div
+                class="ms_int d-flex justify-content-between py-2 px-4 align-items-center rounded rounded-4 bg-white border mb-4">
+                <h4 class="mb-0">I tuoi Piatti forti:</h4>
+                <div>
+                    <div class="d-flex align-items-start align-items-center gap-3">
+                        <img class="ms_img_width" src="{{ Vite::asset('resources\img\coccarda_1.png') }}" alt="primo_posto">
+                        <p id="gold" class="m-0 p-0"></p>
                     </div>
-                    <div>
-                        <div class="d-flex align-items-start align-items-center gap-3">
-                            <img class="ms_img_width" src="{{ Vite::asset('resources\img\coccarda_2.png') }}"
-                                alt="primo_posto">
-                            <p id="silver" class="m-0 p-0"></p>
-                        </div>
+                </div>
+                <div>
+                    <div class="d-flex align-items-start align-items-center gap-3">
+                        <img class="ms_img_width" src="{{ Vite::asset('resources\img\coccarda_2.png') }}" alt="primo_posto">
+                        <p id="silver" class="m-0 p-0"></p>
                     </div>
-                    <div>
-                        <div class="d-flex align-items-start align-items-center gap-3">
-                            <img class="ms_img_width" src="{{ Vite::asset('resources\img\coccarda_3.png') }}"
-                                alt="primo_posto">
-                            <p id="bronze" class="m-0 p-0"></p>
-                        </div>
+                </div>
+                <div>
+                    <div class="d-flex align-items-start align-items-center gap-3">
+                        <img class="ms_img_width" src="{{ Vite::asset('resources\img\coccarda_3.png') }}" alt="primo_posto">
+                        <p id="bronze" class="m-0 p-0"></p>
                     </div>
                 </div>
             </div>
 
-
+            {{-- STATISTICHE --}}
             <div class="charts-container row row-cols-1 row-cols-lg-2">
                 <div class="col">
-                    <div class="card mb-4">
+                    <div class="card mb-4 border">
                         <div class="card-body chart col p-4">
                             <canvas id="lineChartOrders"></canvas>
                         </div>
@@ -51,7 +48,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card mb-4">
+                    <div class="card mb-4 border">
                         <div class="card-body chart col p-4">
                             <canvas id="lineChartAmount"></canvas>
                         </div>
@@ -59,7 +56,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card mb-4">
+                    <div class="card mb-4 border">
                         <div class="card-body chart col p-4">
                             <canvas id="barChartOrders"></canvas>
                         </div>
@@ -67,7 +64,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card mb-4">
+                    <div class="card mb-4 border">
                         <div class="card-body chart col p-4">
                             <canvas id="barChartAmount"></canvas>
                         </div>

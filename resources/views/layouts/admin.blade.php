@@ -76,8 +76,8 @@
 
                     <div class="navbar-nav d-md-flex flex-row align-items-center d-none">
                         <div class="dropdown me-2">
-                            <button class="btn ms_btn-white dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn ms_btn ms_btn-white dropdown-toggle" type="button"
+                                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </button>
 

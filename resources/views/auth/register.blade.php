@@ -8,7 +8,7 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card border">
                     <div class="card-header fs-5">{{ __('Register') }}</div>
 
                     <div class="card-body">

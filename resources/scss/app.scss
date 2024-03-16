@@ -39,79 +39,67 @@ img {
   color: $ms_red;
 }
 
-.ms_btn-red {
-  background-color: $ms_red;
-  color: white;
+// BUTTON
+
+.ms_btn {
   padding: .2rem .5rem .2rem .5rem;
   font-weight: bolder;
   border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.ms_btn-red {
+  background-color: $ms_red;
+  color: white;
   border: 2px solid $ms_red;
 
   &:hover {
     border: 2px solid $ms_red;
     color: $ms_red;
-    background-color: transparent;
   }
 }
 
 .ms_btn-white {
   background-color: $ms_yellow;
   color: $ms_dark;
-  padding: .2rem .5rem .2rem .5rem;
-  font-weight: bolder;
-  border-radius: 5px;
   border: 2px solid $ms_yellow;
 
   &:hover {
     border: 2px solid white;
     color: white;
-    background-color: transparent;
   }
 }
 
 .ms_btn-yellow {
   background-color: $ms_yellow;
   color: white;
-  padding: .2rem .5rem .2rem .5rem;
-  font-weight: bolder;
-  border-radius: 5px;
   border: 2px solid $ms_yellow;
 
   &:hover {
     border: 2px solid $ms_yellow;
     color: $ms_yellow;
-    background-color: transparent;
   }
 }
 
 .ms_btn-green {
   background-color: $ms_green;
-  padding: .2rem .5rem .2rem .5rem;
   color: white;
-  font-weight: bolder;
-  border-radius: 5px;
   border: 2px solid $ms_green;
 }
 
 .ms_btn-dark {
   background-color: $ms_dark;
   color: white;
-  padding: .2rem .5rem .2rem .5rem;
-  font-weight: bolder;
-  border-radius: 5px;
   border: 2px solid $ms_dark;
 
   &:hover {
     border: 2px solid $ms_dark;
     color: $ms_dark;
-    background-color: transparent;
   }
-}
-
-.ms_btn {
-  text-decoration: none;
-  border-radius: 5px;
-  padding: .3rem .6rem .3rem .6rem;
 }
 
 .ms_badge-dark {
@@ -128,17 +116,30 @@ img {
   background-image: url(../img/background.png);
   background-repeat: repeat;
   background-size: 1080px 981px;
-}
 
-.wrapper {
-  padding-top: 1.5rem;
-  width: 90%;
-  margin: 0 auto;
-  max-height: 1920px;
-}
+  .wrapper {
+    padding-top: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    max-height: 1920px;
+  }
 
-.ms_header-logo {
-  height: 2rem;
+  .container {
+    .ms_int {
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .pagination {
+      margin: 0 !important;
+    }
+  }
+
+  .ms_header-logo {
+    height: 2rem;
+  }
 }
 
 .user_dropdown {
