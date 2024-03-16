@@ -2,16 +2,17 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="modal-delete-label">QUESTO PIATTO VERRA' DEFINITIVAMENTE ELIMINATO</h5>
+                <h3 class="modal-title" id="modal-delete-label">Attenzione</h3>
                 <button type="button" class="btn-close close-modal" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h2 class="text-center">Sei sicuro di voler cancellare ?</h2>
+                <p>Sei sicuro di voler cancellare il piatto?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn ms_btn-dark close-modal" data-bs-dismiss="modal">ANNULLA</button>
-                <button id="action-delete" type="button" class="btn ms_btn-red">ELIMINA DEFINITIVAMENTE</button>
+                <button type="button" class="ms_btn ms_btn-dark close-modal" data-bs-dismiss="modal">No,
+                    annulla</button>
+                <button id="action-delete" type="button" class="ms_btn ms_btn-red">Si, elimina</button>
             </div>
         </div>
     </div>

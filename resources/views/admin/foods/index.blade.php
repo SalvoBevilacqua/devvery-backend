@@ -16,28 +16,23 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center">
-            <div>
-                {{-- Delete and Restore Message Success --}}
-                @if (session('message'))
-                    <div class="container text-center">
-                        <p class="alert alert-dark ms_color-dark fw-bold">
-                            {{ strtoupper(session('message')) }}
-                        </p>
-                    </div>
-                @elseif (session('trash_message'))
-                    <div class="container text-center">
-                        <p class="alert alert-dark ms_color-dark fw-bold">
-                            {{ strtoupper(session('trash_message')) }}
-                        </p>
-                    </div>
-                @endif
+        {{-- Delete and Restore Message Success --}}
+        @if (session('message'))
+            <div class="py-2 px-4 rounded rounded-4 bg-white border mt-4 d-inline-block">
+                <p class="ms_color-dark fw-bold p-0 m-0">
+                    {{ strtoupper(session('message')) }}
+                </p>
             </div>
-            {{ $foods->render() }}
-        </div>
+        @elseif (session('trash_message'))
+            <div class="py-2 px-4 rounded rounded-4 bg-white border mt-4 d-inline-block">
+                <p class="ms_color-dark fw-bold p-0 m-0">
+                    {{ strtoupper(session('trash_message')) }}
+                </p>
+            </div>
+        @endif
 
+        {{-- CARD --}}
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
-
             @foreach ($foods as $food)
                 <div class="col g-4">
                     <div class="card hover-zoom border h-100">

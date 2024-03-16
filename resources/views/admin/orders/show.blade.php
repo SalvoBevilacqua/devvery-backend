@@ -16,23 +16,25 @@
                     </div>
 
                     <div class="card-body fs-5 mt-4">
-                        <div>
-                            <p class="fw-bold">Nome:
-                                <span class="fw-normal">
-                                    {{ $order->customer->first_name }}
-                                    {{ $order->customer->last_name }}
-                                </span>
-                            </p>
-                            <p class="fw-bold">Indirizzo:
-                                <span class="fw-normal">
-                                    {{ $order->customer->address }}
-                                </span>
-                            </p>
-                            <p class="fw-bold">Telefono:
-                                <span class="fw-normal">
-                                    {{ $order->customer->phone }}
-                                </span>
-                            </p>
+                        <div class="text-center">
+                            <div class="border d-inline-block rounded rounded-4 text-start p-3">
+                                <p class="fw-bold">Nome:
+                                    <span class="fw-normal">
+                                        {{ $order->customer->first_name }}
+                                        {{ $order->customer->last_name }}
+                                    </span>
+                                </p>
+                                <p class="fw-bold">Indirizzo:
+                                    <span class="fw-normal">
+                                        {{ $order->customer->address }}
+                                    </span>
+                                </p>
+                                <p class="fw-bold">Telefono:
+                                    <span class="fw-normal">
+                                        {{ $order->customer->phone }}
+                                    </span>
+                                </p>
+                            </div>
                         </div>
 
                         <div class="row row-cols-3 mt-5 flex-wrap">

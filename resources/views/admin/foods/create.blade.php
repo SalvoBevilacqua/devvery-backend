@@ -5,13 +5,15 @@
 @endsection
 
 @section('content')
-    <div class="container mt-3">
+    <div class="container pb-4">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <a href="{{ route('admin.foods.index') }}" class="btn ms_btn-dark mb-4">MENU</a>
-                <div class="card">
+                <a href="{{ route('admin.foods.index') }}" class="ms_btn ms_btn-dark">Menù</a>
+
+                {{-- FORM --}}
+                <div class="card mt-4 border">
                     <div class="card-header">
-                        <h2 class="mb-0">Aggiungi un nuovo Piatto:</h2>
+                        <h3 class="mb-0">Aggiungi un nuovo Piatto</h3>
                     </div>
                     <div class="card-body p-4">
                         <small class="text-danger">I campi contrassegnati con un asterisco (*) sono obbligatori.</small>
@@ -91,7 +93,7 @@
                             <hr>
 
                             {{-- Form per l'immagine --}}
-                            <div class="mb-3">
+                            <div>
                                 <label for="cover_image" class="form-label">Immagine del Piatto:</label>
                                 <input type="file" class="form-control @error('cover_image') is-invalid @enderror"
                                     id="cover_image" name="cover_image">
@@ -100,11 +102,12 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3">
-                                <img id="preview-image" src="" alt="" style="max-width: 250px">
+                            <div>
+                                <img id="preview-image" src="" alt="" style="max-width: 250px"
+                                    class="my-3">
                             </div>
 
-                            <button class="btn ms_btn-yellow mt-3" type="submit">Salva</button>
+                            <button class="ms_btn ms_btn-yellow" type="submit">Salva</button>
 
                         </form>
                     </div>

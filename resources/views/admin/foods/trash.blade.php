@@ -7,48 +7,41 @@
 @section('content')
 
     {{-- Trash Table --}}
-    <div class="container-fluid">
+    <div class="container">
 
         @if (count($foods) > 0)
             <div
-                class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded ms_bg-horizontal text-white">
-                <h2>I tuoi piatti eliminati: {{ count($food_deleted) }}</h2>
-                <a href="{{ route('admin.foods.index') }}" class="btn ms_btn-yellow float-center">INDIETRO</a>
+                class="ms_int d-flex justify-content-between py-2 px-4 align-items-center rounded rounded-4 bg-white border">
+                <h3 class="mb-0">I tuoi piatti eliminati: {{ count($food_deleted) }}</h3>
+                <a href="{{ route('admin.foods.index') }}" class="ms_btn ms_btn-dark">Indietro</a>
             </div>
 
-            <div class="mt-5 d-flex justify-content-between align-items-center">
-                <div>
-                    {{-- Restore Message Success --}}
-                    @if (session('message'))
-                        <div class="container text-center">
-                            <p class="alert alert-success fw-bold">
-                                {{ strtoupper(session('message')) }}
-                            </p>
-                        </div>
-                    @endif
-
-                    {{-- Def Delete Message --}}
-                    @if (session('def_del_mess'))
-                        <div class="container text-center">
-                            <p class="alert alert-danger fw-bold">
-                                {{ strtoupper(session('def_del_mess')) }}
-                            </p>
-                        </div>
-                    @endif
+            {{-- Restore Message Success --}}
+            @if (session('message'))
+                <div class="py-2 px-4 rounded rounded-4 bg-white border mt-4 d-inline-block">
+                    <p class="ms_color-dark fw-bold p-0 m-0">
+                        {{ strtoupper(session('message')) }}
+                    </p>
                 </div>
-                {{ $foods->render() }}
-            </div>
+            @endif
 
+            {{-- Def Delete Message --}}
+            @if (session('def_del_mess'))
+                <div class="py-2 px-4 rounded rounded-4 bg-white border mt-4 d-inline-block">
+                    <p class="ms_color-dark fw-bold p-0 m-0">
+                        {{ strtoupper(session('def_del_mess')) }}
+                    </p>
+                </div>
+            @endif
+
+            {{-- CARD --}}
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 @foreach ($foods as $food)
                     <div class="col g-4">
-                        <div class="card shadow rounded h-100">
-                            <div class="card-body h-25">
-                                <h5 class="card-title mb-0">{{ $food->name }}</h5>
+                        <div class="card rounded rounded-4 h-100 border">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $food->name }}</h5>
                                 <p class="mt-0">{{ $food->category->name }}</p>
-                                <hr>
-                            </div>
-                            <div class="card-body h-50">
                                 <h5>Descrizione:</h5>
                                 <p>{{ $food->description }}</p>
                             </div>
@@ -56,13 +49,13 @@
                                 class="gap-2 d-flex card-body flex-wrap align-items-center justify-content-around border-top border-2">
                                 <form action="{{ route('admin.foods.restore', ['food' => $food->id]) }}" method="POST">
                                     @csrf
-                                    <button class="btn ms_btn-yellow" type="submit">RIPRISTINA</button>
+                                    <button class="ms_btn ms_btn-yellow" type="submit">Ripristina</button>
                                 </form>
                                 <form action="{{ route('admin.foods.def_destroy', ['food' => $food->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn ms_btn-red def-delete-btn" type="submit" data-bs-toggle="modal"
-                                        data-bs-target="#modal-def-delete">CANCELLA</button>
+                                    <button class="ms_btn ms_btn-red def-delete-btn" type="submit" data-bs-toggle="modal"
+                                        data-bs-target="#modal-def-delete">Elimina</button>
                                 </form>
                             </div>
                         </div>
@@ -71,11 +64,9 @@
             </div>
         @else
             <div
-                class="d-flex justify-content-between align-items-center mb-4 py-2 px-4 align-items-center rounded ms_bg-horizontal text-white">
-                <h2 class="">Il tuo cestino è vuoto</h2>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a href="{{ route('admin.foods.index') }}" class="btn ms_btn-dark float-center">INDIETRO</a>
+                class="ms_int d-flex justify-content-between py-2 px-4 align-items-center rounded rounded-4 bg-white border">
+                <h3 class="mb-0">Il tuo cestino è vuoto</h3>
+                <a href="{{ route('admin.foods.index') }}" class="ms_btn ms_btn-dark">Indietro</a>
             </div>
         @endif
 

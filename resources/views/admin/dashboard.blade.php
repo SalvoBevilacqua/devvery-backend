@@ -5,11 +5,12 @@
 @endsection
 
 @section('content')
-
     <div class="container">
-        <div
-            class="ms_int d-flex justify-content-between align-items-center px-4 py-2 align-items-center rounded rounded-4 flex-wrap bg-white border">
-            @if ($user->userDetail)
+
+        {{-- INFO --}}
+        @if ($user->userDetail)
+            <div
+                class="ms_int d-flex justify-content-between align-items-center px-4 py-2 align-items-center rounded rounded-4 flex-wrap bg-white border">
                 <p><strong>Partita IVA:</strong><br> {{ $user->userDetail->vat_number }}
                 </p>
                 <p><strong>Telefono:</strong><br> {{ $user->userDetail->phone }}</p>
@@ -19,47 +20,43 @@
                     href="{{ route('admin.userDetails.edit', ['userDetail' => Auth::user()->id]) }}">
                     Modifica i tuoi dati
                 </a>
-            @endif
-        </div>
+            </div>
+        @endif
+
+        {{-- FIRST LOGIN --}}
+        @if (!$restaurant)
+            <div class="d-flex justify-content-center text-center">
+                <div class="col-10 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mt-5 mt-md-0 border rounded rounded-4">
+                        @if (!$user->userDetail)
+                            <a class="ms_btn ms_btn-yellow" href="{{ route('admin.userDetails.create') }}">
+                                Inserisci i tuoi dati personali
+                            </a>
+                        @endif
+
+                        @if (!empty($user->userDetail) && !$restaurant)
+                            <a class="ms_btn ms_btn-yellow" href="{{ route('admin.restaurants.create') }}">
+                                Aggiungi il tuo ristorante
+                            </a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        @endif
 
         {{-- Message Section --}}
         @if (Session::has('message'))
-            <div class="container text-center mt-3">
-                <p class="alert alert-dark ms_color-dark fw-bold">
+            <div class="py-2 px-4 rounded rounded-4 bg-white border mt-4 d-inline-block">
+                <p class="ms_color-dark fw-bold p-0 m-0">
                     {{ strtoupper(Session::get('message')) }}
                 </p>
             </div>
         @endif
 
-        <div class="row d-flex justify-content-center text-center mt-5">
-            <div class="col-md-8">
-                @if (!$restaurant)
-                    <div>
-                        <div class="card border">
-                            <div class="card-body">
-                                @if (!$user->userDetail)
-                                    <p class="fw-bolder">Per creare un ristorante, inserisci prima i tuoi dati personali</p>
-
-                                    <a class="ms_btn ms_btn-yellow" href="{{ route('admin.userDetails.create') }}">
-                                        Inserisci i tuoi dati
-                                    </a>
-                                @endif
-
-                                @if (!empty($user->userDetail) && !$restaurant)
-                                    <p class="mt-3 fw-bolder">Crea il tuo Ristorante per cominciare</p>
-
-                                    <a class="ms_btn ms_btn-yellow" href="{{ route('admin.restaurants.create') }}">
-                                        Aggiungi un ristorante
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            </div>
-
-            <div class="col-md-8">
-                @if ($restaurant)
+        {{-- INFO RESTAURANTS --}}
+        @if ($restaurant)
+            <div class="row d-flex justify-content-center text-center mt-5">
+                <div class="col-md-8">
                     <div class="card mt-5 mt-md-0 border">
                         <div class="card-header">
                             <h4>{{ $restaurant->name }}</h4>
@@ -105,10 +102,9 @@
                             </div>
                         </div>
                     </div>
-                @endif
-
+                </div>
             </div>
-        </div>
+        @endif
 
         @include('partials.modal_delete')
     </div>

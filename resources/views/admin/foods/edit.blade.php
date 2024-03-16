@@ -8,8 +8,9 @@
     <div class="container pb-4">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <a href="{{ route('admin.foods.index') }}" class="ms_btn ms_btn-dark">Indietro</a>
+                <a href="{{ route('admin.foods.index') }}" class="ms_btn ms_btn-dark">Menù</a>
 
+                {{-- FORM --}}
                 <div class="card mt-4 border">
                     <div class="card-header d-flex justify-content-between">
                         <h3 class="mb-0">Modifica il Piatto</h3>
