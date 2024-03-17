@@ -55,7 +55,7 @@
 
         {{-- INFO RESTAURANTS --}}
         @if ($restaurant)
-            <div class="row d-flex justify-content-center text-center mt-5">
+            <div class="row d-flex justify-content-center text-center mt-4">
                 <div class="col-md-8">
                     <div class="card border">
                         <div class="card-header">
