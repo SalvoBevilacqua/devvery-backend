@@ -72,14 +72,15 @@
                 </div>
 
             </div>
-
+        @else
+            <div class="d-flex justify-content-center">
+                <div class="p-3 w-75">
+                    <h3>Le statistiche si visualizzano dopo un minimo di 20 ordini
+                        ricevuti</h3>
+                </div>
+            </div>
+        @endif
     </div>
-@else
-    <div class="row d-flex justify-content-center ">
-        <h1 class="text-center ms_bg-yellow p-3 col-md-6">Le statistiche si visualizzano dopo un minimo di 20 ordini
-            ricevuti</h1>
-    </div>
-    @endif
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

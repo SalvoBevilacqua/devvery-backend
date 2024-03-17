@@ -63,7 +63,7 @@
                         @endif
 
                         <li class="d-block d-md-none">
-                            <a class="nav-item px-2 ms_color-red" href="{{ route('logout') }}"
+                            <a class="nav-item ms_color-dark" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>

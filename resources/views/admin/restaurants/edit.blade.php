@@ -68,7 +68,6 @@
                                 @enderror
                             </div>
 
-
                             <div class="mb-3">
                                 <p class="fw-bold">Tipologia</p>
                                 <div class="d-flex flex-wrap gap-2 justify-content-around">
@@ -85,7 +84,6 @@
                                     <div class="d-block invalid-feedback text-center">{{ $message }}</div>
                                 @enderror
                             </div>
-
 
                             <div class="mb-3">
                                 <label for="cover_image"

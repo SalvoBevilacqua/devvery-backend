@@ -5,15 +5,15 @@
 @endsection
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container">
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center pb-4">
             <div class="col-md-10">
                 {{-- Back Button --}}
-                <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-dark mb-4">INDIETRO</a>
-                <div class="card">
+                <a href="{{ route('admin.dashboard') }}" class="ms_btn ms_btn-dark mb-4">Indietro</a>
+                <div class="card border mt-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h1>Crea Il Tuo Ristorante</h1>
+                        <h3>Crea Il Tuo Ristorante</h3>
                     </div>
                     <div class="card-body p-4">
                         <small class="text-danger">I campi contrassegnati con un asterisco (*) sono obbligatori.</small>
@@ -66,7 +66,6 @@
                                 @enderror
                             </div>
 
-
                             <div class="mb-3">
                                 <p class="fw-bold">Tipologia</p>
                                 <div class="d-flex flex-wrap gap-2 justify-content-around">
@@ -97,9 +96,8 @@
                                 <img id="preview-image" src="" alt="" style="max-width: 250px">
                             </div>
 
-                            <button class="btn ms_btn-yellow" type="submit">SALVA</button>
+                            <button class="ms_btn ms_btn-yellow" type="submit">Salva</button>
                         </form>
-
                     </div>
                 </div>
             </div>

@@ -14,18 +14,6 @@
                 <div class="card mt-4 border">
                     <div class="card-header d-flex justify-content-between">
                         <h3 class="mb-0">Modifica il Piatto</h3>
-
-                        <div class="d-flex align-items-center gap-2 justify-content-center">
-                            <strong>Disponibile</strong>
-                            <div>
-                                <label class="toggler-wrapper style-1">
-                                    <input type="checkbox" name="available" value="1" @checked($food->available === 1)>
-                                    <div class="toggler-slider">
-                                        <div class="toggler-knob"></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
                     </div>
                     <div class="card-body p-4">
                         <small class="text-danger">I campi contrassegnati con un asterisco (*) sono obbligatori.</small>
@@ -120,7 +108,23 @@
                                     style="max-width: 250px">
                             </div>
 
-                            <button class="ms_btn ms_btn-yellow" type="submit">Salva</button>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center gap-2 justify-content-center">
+                                    <strong>Disponibile</strong>
+                                    <div>
+                                        <label class="toggler-wrapper style-1">
+                                            <input type="checkbox" name="available" value="1"
+                                                @checked($food->available === 1)>
+                                            <div class="toggler-slider">
+                                                <div class="toggler-knob"></div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="ms_btn ms_btn-yellow" type="submit">Salva</button>
+                            </div>
+
                         </form>
                     </div>
                 </div>

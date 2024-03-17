@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-    <div class="container mt-5">
-        <a href="{{ route('admin.dashboard') }}" class="btn ms_btn-dark mb-4">Indietro</a>
-        <div class="card">
+    <div class="container">
+        <a href="{{ route('admin.dashboard') }}" class="ms_btn ms_btn-dark mb-4">Indietro</a>
+        <div class="card border mt-4">
             <div class="card-header">
-                <h2>Aggiungi i tuoi dati personali</h2>
+                <h3>Aggiungi i tuoi dati personali</h3>
             </div>
             <div class="card-body p-4">
                 <small class="text-danger">Tutti i campi sono obbligatori</small>
@@ -40,14 +40,14 @@
                     {{-- form to address --}}
                     <div class="mb-3">
                         <label for="address" class="form-label">Indirizzo</label>
-                        <input type="text" class="form-control @error('phone') is-invalid @enderror" id="address" name="address"
-                            value="{{ old('address') }}" required>
-                            @error('address')
+                        <input type="text" class="form-control @error('phone') is-invalid @enderror" id="address"
+                            name="address" value="{{ old('address') }}" required>
+                        @error('address')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
 
-                    <button class="btn ms_btn-yellow" type='submit'>Salva</button>
+                    <button class="ms_btn ms_btn-yellow" type='submit'>Salva</button>
                 </form>
             </div>
         </div>
