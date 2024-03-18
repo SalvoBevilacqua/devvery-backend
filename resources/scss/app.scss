@@ -145,7 +145,12 @@ img {
   .page-link {
     background-color: white !important;
     color: $ms_dark !important;
-    border: 1px solid #dee2e6 !important;
+    border-color: #dee2e6 !important;
+
+    &:hover {
+      color: white !important;
+      background-color: $ms_yellow !important;
+    }
   }
 
   @media screen and (max-width: 450px) {
