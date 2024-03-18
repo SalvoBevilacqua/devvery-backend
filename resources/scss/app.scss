@@ -110,6 +110,17 @@ img {
   font-weight: bold;
 }
 
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+  background: $ms_dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $ms_yellow;
+  border-radius: 4px;
+}
+
 // CUSTOM
 #app {
   min-height: 100vh;
