@@ -125,6 +125,10 @@ img {
     max-height: 1920px;
   }
 
+  .ms_header-logo {
+    height: 2rem;
+  }
+
   .container {
     .ms_int {
       p {
@@ -138,8 +142,10 @@ img {
     }
   }
 
-  .ms_header-logo {
-    height: 2rem;
+  .page-link {
+    background-color: white !important;
+    color: $ms_dark !important;
+    border: 1px solid #dee2e6 !important;
   }
 
   @media screen and (max-width: 450px) {
