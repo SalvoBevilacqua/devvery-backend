@@ -58,6 +58,18 @@ class OrderController extends Controller
         return redirect()->route('admin.orders.index');
     }
 
+    public function unCheckOrder($id)
+    {
+        $order = Order::find($id);
+
+        $this->checkRestaurant($order);
+
+        $order->status = 0;
+        $order->update();
+
+        return redirect()->route('admin.orders.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -29,23 +29,24 @@ Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->prefix('admin')
     ->group(function () {
-        
+
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
         // Trash and softDelete foods
         Route::get('foods/trash', [FoodController::class, 'trash'])->name('foods.trash');
         Route::post("foods/restore/{food}", [FoodController::class, "restore"])->withTrashed()->name('foods.restore');
         Route::delete("foods/def_destroy/{food}", [FoodController::class, "defDestroy"])->withTrashed()->name('foods.def_destroy');
-        
+
         // Resource
         Route::get('orders/complete', [OrderController::class, 'indexComplete'])->name('orders.complete');
         Route::resource('orders', OrderController::class);
         Route::post('orders/check/{order}', [OrderController::class, 'checkOrder'])->name('order.check');
-        
+        Route::post('orders/uncheck/{order}', [OrderController::class, 'unCheckOrder'])->name('order.uncheck');
+
         Route::resource('restaurants', RestaurantController::class)->parameters(['restaurants' => 'restaurant:slug']);
         Route::resource('userDetails', UserDetailController::class);
         Route::resource('foods', FoodController::class);
-       
+
         // Stats Routes
         Route::get('stats', [StatController::class, 'index'])->name('stats');
         Route::get('charts/order/month', [StatController::class, 'getDataChart'])->name('getDataChart');
@@ -53,7 +54,6 @@ Route::middleware(['auth', 'verified'])
         Route::get('charts/amount/month', [StatController::class, 'getAmountChartMonth'])->name('getAmountChartMonth');
         Route::get('charts/amount/year', [StatController::class, 'getAmountChartYear'])->name('getAmountChartYear');
         Route::get('chart/most-ordered-food', [StatController::class, 'bestsFoods'])->name('bestsFoods');
-
     });
 
 require __DIR__ . '/auth.php';

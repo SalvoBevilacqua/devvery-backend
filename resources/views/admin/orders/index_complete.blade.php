@@ -35,12 +35,12 @@
                             <div class="d-flex gap-2 justify-content-center">
                                 <a href="{{ route('admin.orders.show', ['order' => $order->id]) }}"
                                     class="ms_btn ms_btn-yellow"><i class="fa-regular fa-eye"></i></a>
-                                <form action="{{ route('admin.order.check', ['order' => $order->id]) }}" method="POST">
+                                <form action="{{ route('admin.order.uncheck', ['order' => $order->id]) }}" method="POST">
                                     @csrf
                                     @method('POST')
-                                    <button @disabled($order->status === 1) type="submit"
-                                        class="{{ $order->status === 0 ? 'ms_btn ms_btn-red' : 'ms_btn ms_btn-green' }}"><i
-                                            class="fa-solid fa-circle-check"></i></button>
+                                    <button @disabled($order->status === 0) type="submit" class="ms_btn ms_btn-green">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </button>
                                 </form>
                             </div>
                         </td>
